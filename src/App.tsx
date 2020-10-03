@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from 'src/logo.svg';
 import './App.css';
 // import * as request from 'request-promise-native';
 
@@ -52,16 +52,60 @@ export async function http<T>(
 
 const data = async() =>  {
   const response = await http<Response[]>(
-  'sit.test.instructure.com/api/v1/courses/:course_id/modules'
+  'sit.test.instructure.com/api/v1/courses'
   );
   return response;
 }
-  // function fetchModules(): Promise<any> {
-  // const baseUrl = 'sit.test.instructure.com/api/v1/courses/:course_id/modules';
-  // const response = await fetch(baseUrl);
-  // const body = await response.json();
-//   });
+
+class ModuleEntry extends React.Component {
+  constructor(props: any) {
+    super(props);
+  }
   
+  render () {
+    return <p>Hello world</p>;
+  }
+};
+
+function App()  {
+  // useEffect(() => {
+  //     // Example of how to send a message to eventPage.ts.
+  //     chrome.runtime.sendMessage({ popupMounted: true });
+  //   }, []);
+  //   return <div className="popupContainer">Hello, world!</div>;
+  // }
+  return (
+    <div className="App">
+      <header className="App-header">
+        <ModuleEntry /> 
+      </header> 
+    </div>
+  );
+}
+export default App;
+
+
+
+
+
+// {/* <p>
+//   Edit <code>src/App.tsx</code> and save to reload.
+// </p> */
+// /* <a
+//   className="App-link"
+//   href="https://reactjs.org"
+//   target="_blank"
+//   rel="noopener noreferrer"
+// >
+//   Learn React */
+// /* </a>} */
+
+
+// function fetchModules(): Promise<any> {
+// const baseUrl = 'sit.test.instructure.com/api/v1/courses/:course_id/modules';
+// const response = await fetch(baseUrl);
+// const body = await response.json();
+//   });
 // }
 // }
 
@@ -72,10 +116,10 @@ const data = async() =>  {
 //     uri: baseUrl
 //   }
 
-  // var response = {
-  //   "id":0,
-  //   "name": "",
-  // }
+// var response = {
+//   "id":0,
+//   "name": "",
+// }
 
 
 //   const response = await request(opts)
@@ -87,26 +131,3 @@ const data = async() =>  {
 //       console.timeLog("exception: " + error);
 //     })
 // }
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header"> 
-        {  <img src={logo} className="App-logo" alt="logo" /> 
-        /* <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p> */
-        /* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React */
-        /* </a>} */
-  }</header> 
-    </div>
-  );
-}
-
-export default App;
